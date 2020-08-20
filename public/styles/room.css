@@ -1,0 +1,298 @@
+
+
+/*.themecolor {
+  background-color: #FFB347;
+}
+*/
+#subnicknameloading{
+  display: none;
+  margin: 25px 15px;
+}
+
+#enterName{
+  font-size: 1.5vw;
+}
+
+
+
+#gameList {
+  color:#868e96;
+  background-color:transparent;
+}
+
+#Participant{
+  color:#868e96;
+  background-color:transparent;
+}
+
+/*#blockDaily{
+  position: absolute;
+  /*border:1px red solid;*/
+  /*width: 100%;
+  height: 4%;
+  z-index: 99;
+  background-color:white;
+  border-bottom: 1px grey solid;
+  color:black;
+}*/
+
+body {
+  height: 100vh;
+    padding:0px !important;
+    /*border: 5px green solid;*/
+}
+  
+  #wrapper {
+    display: flex;
+    /*border: 0px black solid;*/
+    height: 92%;
+    padding:0px;
+    
+  }
+  
+  #navover{
+    /*border-width: 0px;*/
+    height: 7vh;
+    padding: 0px;
+    /*background-color: #f1f1f1;*/
+    background-image: linear-gradient(to bottom, rgba(220,220,220,1), rgba(255,255,255,1));
+    border-bottom: 2px #f1f1f1 solid;
+    z-index: 3;
+  }
+  
+  #logo{
+    width: 3%;
+    margin-left: 10px; 
+    margin-right: 0px;
+    cursor: pointer;
+  }
+  
+  #logotext {
+    /*padding-top: 13px;*/
+    cursor: pointer;
+    font-size: 1vw;
+    color:#868e96;
+  }
+  
+  #left {
+    flex: 0 0 70%;
+    height: 100%;
+    /*border: 1px grey solid;*/
+    padding-top: 0px;
+  }
+  
+  #right {
+    flex: 1;
+    border: 2px #f1f1f1 solid;
+    text-align: center;
+    /*background: #FFB347;*/
+    height: 100%;
+
+  }
+  
+  #sharebutton{
+  margin: 0px 10px 0px 20px;
+}
+  
+  #leavebutton{
+    margin: 0px 20px 0px 10px;  
+  }
+  
+  
+  
+  #videochat{
+    font-size: 30px; 
+  }
+  
+  #wheel {
+    float: middle;
+  }
+  
+  .videowindow{
+    border: 1px blue solid;
+    padding: 400px, 10px;
+    margin: 5px;
+    background-color: #f1f1f1;
+    height: 20%;
+    align-items: center;
+    font-size: 10px;
+  }
+  
+  
+  #topic_title{
+    /*border: 1px red solid;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*font-family:Impact, Charcoal, sans-serif;*/
+    height:16%;
+    padding: 2rem 3rem 2rem 2rem;
+    margin-top:1vh;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    /*border-radius: 20px;*/
+    height: 5.5vw;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    padding-left: 7vw;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; 
+    border-radius: 55px;
+  }
+  
+  .titles{
+    text-align:center;
+    font-size:2rem;
+  }
+  
+  
+  #prompt{
+    line-height:5vw;
+    font-size:2.3vw;
+    color: white;
+  }
+
+  #modalprompt{
+    line-height:100px;
+    font-size:2rem;
+    /*color: #F1D8B1;*/
+  }
+  #result{
+    line-height:5vw;
+    font-size:2.3vw;
+    color: white;
+    cursor: pointer;
+  }
+  /* Do an horizontal flip when you move the mouse over the flip box container 
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  */
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    /*border-radius:20px;*/
+  }
+  
+ 
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    
+    background-image: url("frontwood1.jpg");
+    box-shadow: 5px 10px 18px #888888;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    /*background-image: url("backwood.jpg");*/
+    background-image: url("backwood1.jpg");
+    transform: rotateX(180deg);
+    box-shadow: 5px 10px 18px #888888;
+  }
+  
+  
+  #button_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  #random_button{
+    height: 3vw;
+    width: 5vw;
+    transform: translateX(-12.5%);
+    font-size: 1.5vw;
+    /*color: #FFB347;*/
+    cursor: pointer;
+    /*border-radius: 55px;*/
+    text-align: center;
+    margin-right: 3vw;
+  }
+
+  #destinyCard {
+    text-align: center;
+    height:55%;
+    margin: 6rem 12rem;
+    background-color: #FFB347;
+    display: none;
+    border-radius: 30px;
+    box-shadow: 5px 10px 18px #888888;
+  }
+
+  #showSpinner{
+    text-align: center;
+    height:55%;
+    margin: 6rem;
+    background-color: white;
+    display: none;
+    border: 0px;
+  }
+
+  #spinnerText{
+    font-size: 3vw;
+  }
+  
+  #trivia {
+    text-align: center;
+    height:80%;
+    margin: 3rem 8rem 8rem 8rem;
+    display: none;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    box-shadow: 5px 10px 18px #888888;
+    /*border: 0px;*/
+  }
+  #triviaText {
+    font-size: 2rem;
+  }
+
+  #triviaLoading{
+  display: none;
+}
+
+#triviaAnswer{font-size: 1vw;}
+
+#iframescreen {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+#iframescreen iframe {
+    position: absolute;
+    top: 0px;
+    left: 2.5%;
+    width: 95%;
+    height: 95%;
+    /*border: 1px blue solid;*/
+}
+
+
+#screen{
+    /*border: 5px yellow solid;*/
+    height: 80%;
+    margin-top: 0rem;
+    padding: 0px;
+  }
+
+#desCardText{
+  font-size: 2vw;
+  opacity: 0;
+  transition: 2s ease-in-out;
+}

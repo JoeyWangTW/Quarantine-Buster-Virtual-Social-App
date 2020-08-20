@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <title>Quarantine Buster</title> -->
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.14.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.14.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+    <script crossorigin="anonymous" type="text/javascript" src="JS/BE.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/mystyle.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-2kOE+STGAkgemIkUbGtoZ8dJLqfvJ/xzRnimSkQN7viOfwRvWseF7lqcuNXmjwrL" crossorigin="anonymous">
+  </head>
+  <body>
+      <input type="text" class="form-control" id="password" placeholder="password">
+      <div>
+        <button type="button" class="btn btn-secondary" id = "CloseRoom" onclick="CloseRoom()">Close all expired room</button></div><div id="DeleteRoomMessage">
+      </div> <hr> <br>
+      <div>
+        New Trivia
+        <input type="text" class="form-control" id="TriviaNewTopic" placeholder="TriviaTopic">
+        <button type="submit" class = "btn btn-secondary" id = "subnickname" onclick="NewTrivia()" >Submit</button></div>
+        <div id="newTrivia"></div>
+            <br>
+            Add Trivia<input type="text" class="form-control" id="TriviaTopic" placeholder="TriviaTopic">
+            <input type="text" class="form-control" id="QA" placeholder="TriviaQ&A">
+            <button type="submit" class = "btn btn-secondary" id = "subnickname" onclick="AddTrivia()" >Submit</button></div>
+            <div id="addTrivia"></div>
+        
+        <br> 
+        <div>
+          Add Youtube
+          <input type="text" class="form-control" id="ytTitle" placeholder="title">
+          <input type="text" class="form-control" id="ytLink" placeholder="link">
+          <input type="text" class="form-control" id="ytType" placeholder="type">
+          <button type="submit" class = "btn btn-secondary" onclick="addYoutube()" >Submit</button>
+          <p id="ytResult"></p>
+        </div>
+  </body>
+  

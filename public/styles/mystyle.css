@@ -1,0 +1,192 @@
+body{background-image: url("background.jpg");
+  /*background-color: black;*/
+  background-size: cover;
+  /*background-height: 500px;*/
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+  /*background-position: center bottom;*/
+  /*background-attachment: fixed;*/
+  height: 100vh;
+  /*border:4px green solid;*/
+  padding:0 !important;
+  }
+
+#room_id{
+  position: absolute;
+  left: -9999px
+}
+
+#landing {
+  height: 90%;
+}
+
+h2 {
+  color: white;
+  font-size: 2vw;
+}
+
+#intro {
+  display: flex;
+  /*border: 1px red solid;*/
+  height: 100%;
+}
+
+#textDes {
+    flex: 0 0 40%;
+    height: 100%;
+    /*border: 1px grey solid;*/
+    padding-top: 0px;
+  }
+  
+#demoVideo {
+    flex: 1;
+    /*border: 2px #f1f1f1 solid;*/
+    text-align: center;
+    /*padding-top: 5%;*/
+    /*background: #FFB347;*/
+    /*height: 100%;*/
+  }
+
+
+#leave{
+  margin: 0px 20px;
+  height: 40px;
+  color: white;
+}
+
+#logo{
+  /*width: 10px;*/
+  width: 4%;
+  margin-left: 20px;
+  margin-right: 10px;
+
+}
+
+#right{
+  margin-left: auto;
+}
+
+
+
+#navover{
+  border-width: 0px;
+  background: rgba(0,0,0,0.5);
+  /*color: white;*/
+}
+
+
+
+.navtext{
+  color: white !important;
+  font-size: 1vw;
+  cursor: pointer;
+}
+   
+
+
+  #header{
+    font-size: 3.5vw;
+    text-align: left;
+    color:white;
+    margin-top: 10%;
+    padding-left: 15%; 
+    padding-top: 10%;
+
+    /*border: 1px red solid;*/
+  }
+
+  .detailtext{
+    text-align: left;
+    color:white;
+    padding: 5% 5% 0% 15%;
+    font-size:1vw;
+  }
+
+  #qaAns{
+    font-size: 0.7vw;
+  }
+
+  #qaQue{
+    font-size: 0.9vw;
+  }
+  
+  .buttons { 
+    /*margin: 10px;*/
+    padding-left: 15%;
+    /*border: 10px;*/
+    /*display: flex;*/
+    text-align: left;
+    align-items: left;
+    /*vertical-align: middle;*/
+  }
+
+  #teamphoto{
+    width:100%;
+  }
+
+  .smallText{
+    text-align: left;
+    font-size:0.8vw; 
+  }
+  
+ #create {
+      font-size: 1.5vw;
+      width: 20vw;
+      color: white;
+      /*background-color: #FFB347;*/
+      border-width: 0px; 
+      /*text-align: left;  */
+      border-radius: 10px;
+      padding: 5px;  
+  }
+  
+  #join {
+    /*display: block;*/
+      font-size: 1.5vw;
+      padding: 2px;
+      border-radius: 8px; 
+      color: white;  
+      width: 10%;
+      background-color: #F1D8B1;
+      border: 0px;
+  }
+  
+  #commentDes {
+    font-size: 1vw;
+    /*text-align: center;*/
+    /*margin-bottom: 3%;*/
+  }
+
+  #inputComment{
+    margin:3%;
+    margin-left: 0;
+  }
+
+  #subcommentloading{
+    display: none;
+  }
+
+  #thankyou{
+    display:none;
+    font-size: 1vw;
+    color:#FFB347;
+  }
+  
+/*  #inputnumber {
+      font-size: 20px;
+      font-size: 1.5vw;
+      padding: 2px;
+      border-radius: 8px; 
+      width: 14.5%; 
+      border: 0px;
+  }*/
+
+#placeholder{
+  position: relative;
+  top:17%;
+  width: 80%;
+  box-shadow: 5px 10px 18px #000000;
+  border-radius: 6px;
+}

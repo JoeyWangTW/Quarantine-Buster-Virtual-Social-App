@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Quarantine Buster</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="styles/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="styles/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="styles/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="styles/favicon_io/site.webmanifest">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.14.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.14.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-analytics.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+    <script type="text/javascript" src="/JS/welcome.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/mystyle.css">
+     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  </head>
+  <body> <!-- changed -->
+
+
+
+
+  
+
+    <nav class="navbar " id = "navover">
+      
+      
+      <img src="styles/quarantinebuster logo.png" id="logo">
+      <h2>QuarantineBuster</h2>
+
+      <ul class="nav nav-pills ml-auto" >
+ 
+        <li class="nav-item" >
+          <a class="nav-link navtext" data-toggle="modal" data-target="#aboutModal" onclick="clickAbout()">About</a>
+        </li>
+
+        <li class="nav-item" >
+          <a class="nav-link navtext" data-toggle="modal" data-target="#qaModal" onclick="clickQA()">Q&A</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link navtext" data-toggle="modal" data-target="#contactModal" onclick="clickFeedback()">Feedback</a>
+        </li>
+  
+      <!-- <button type="button" class="btn btn-secondary" id = "leave">Demo Video</button> -->
+      </ul>
+
+    </nav>
+      
+
+
+
+    <section id = "landing">
+        
+      <div id = "intro">
+        
+        <div id = "textDes">
+           <h1 id= "header"> An interactive video chat platform</h1> 
+           <p class= "detailtext"> QuarantineBuster is a new way for colleagues, friends and families to interact with each other online. QuarantineBuster offers fun activities to make video chat more enjoyable! <!-- No more awkward scilence, no more pressure on starting a new topic, just laid back and have fun! --> <br><br>Simply create a room and share the room link with others. Start now to get your best virtual happy hour experience for FREE!</p> 
+
+          <!--  <p class= "detailtext"></p> -->
+           <br><br>
+           <div class = "buttons">
+             <button type="button" class="btn btn-primary" id="create" data-toggle="modal" data-target="#exampleModal" onclick = "create(); resetButton()">  Create a room to start!</button>
+           </div>
+           <!-- <p class= "disclaim">*We don’t collect any personal data.</p> -->
+        </div>  
+        
+        <div id = "demoVideo">
+          <video id="placeholder" playsinline="" autoplay="" loop="" muted="" src="https://firebasestorage.googleapis.com/v0/b/snapfight-528c6.appspot.com/o/demo_homepage.mov?alt=media">
+        </div>
+
+    </div>
+    </section>
+    
+    
+
+<!-- Button trigger modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Creating room...</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="prompt">
+            <div class="spinner-border" id = "subnicknameloading" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Share</button> -->
+            <button type="button" class="btn btn-secondary" id = "sharebutton" data-toggle="popover" data-placement="top" data-content="Please paste to send" data-original-title="Link copied" onclick="copyRoomLink()">Invite Friends</button>
+
+            <button type="button" class="btn btn-primary" onclick="join()">Enter Room</button>
+          </div>
+          <textarea id="room_id"></textarea>
+        </div>
+      </div>
+    </div> 
+
+
+<!-- Q&A modal -->
+ <div class="modal fade" id="qaModal" tabindex="-1" role="dialog" aria-labelledby="qaModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="qaModalLabel">Frequently Asked Questions</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          
+            <p id ="qaQue">1. Is ther a time limit for created rooms? <br></p>
+            <p id="qaAns">There is no time limit for created rooms. You can stay in the room as long as you want. However, the room link will expire 1 hour after it's created, which means no new participants can join the room. <br> </p>
+            <p id ="qaQue">2. How many people can join the room?<br></p>
+            <p id="qaAns"> There is no limit on number of people in a room. However, we recommend to restrict the number of participants under 8 for the best user experience. The video chat window can only show video of up to 8 participants in a room.<br></p>
+            <p id ="qaQue">3. Why can’t I create or join a room?<br></p>
+            <p id="qaAns">Check if your browser extensions have blocked any function. Also, make sure you got the right room link.<br></p>
+            <p id ="qaQue">4. Why is my camera not on?<br></p>
+            <p id="qaAns">The video chat function will ask for permission for the first time. Please follow the instructions to ensure permission.
+            Check that if your browser extensions have blocked any function.<br></p>
+            <p id ="qaQue">5. How secure is Quarantinbuster?<br></p>
+            <p id="qaAns">Each room is protected by a secured unique identifier to prevent external access. Only people with the room link can join.
+            No personal data will be stored. We don’t even use Cookies, as a result, you might have to type in your nickname again while re-joining a room.
+            Room data will be deleted after expired. Video chat is using an end to end encryption and no data is stored. 
+            </p>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Share</button> -->
+            <!-- <button type="button" class="btn btn-secondary" id = "sharebutton" data-toggle="popover" data-placement="top" data-content="Please paste to send" data-original-title="Link copied" onclick="copyRoomLink()">Invite Friends</button>
+ -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactModal" data-dismiss="modal" aria-label="Close">More Questions?</button>
+          </div>
+          <textarea id="room_id"></textarea>
+        </div>
+      </div>
+    </div> 
+
+
+
+<!-- About Modal -->
+
+<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutModalLabel">About us</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="teamintroText">
+            We are a student startup from Global Innovation Exchange (GIX), University of Washington. Our goal is to help people stay connected with each other in this special COVID-19 circumstance. <br> <br>
+            <img src = "teamphoto.jpg" id = "teamphoto"> <br><br>
+            <p class = "smallText" > GIX is a new model of experiential education and practice to develop leaders in innovation. <a href="https://gixnetwork.org"> Learn more about GIX. </a></p>
+           
+          </div>
+          
+          <textarea id="room_id"></textarea>
+        </div>
+      </div>
+    </div> 
+
+<!-- Contact modal -->
+
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Please leave your feedback here</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <label class="col-form-label" for="inputDefault" id="commentDes"> Please leave your comments below.  <br></label><br> -->
+        <br>Name
+        <input type="text" class="form-control" id="name" required> <br>
+        Email
+        <input type="email" class="form-control" id="mail"> <br>
+        Feedback
+        <textarea type="text" class="form-control" id="comment" rows="3" required></textarea> <br><br>
+        
+        <label class="col-form-label smallText" for="inputDefault" id = "thankyou">Feedback submitted, thank you!</label> 
+        <button type="submit" class = "btn btn-primary" id = "subcomment" onclick="submitComment()">Submit</button>
+
+         <div class="spinner-border" id = "subcommentloading" role="status">
+              <span class="sr-only">Loading...</span> 
+        </div>
+      </div>   
+    </div>
+  </div>
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript"> 
+      $(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover()
+      });
+    
+    </script>
+
+  </body>  
+</html>

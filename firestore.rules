@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  match /activities/{document=**}{
+      allow get;
+      allow list;
+      allow create: if false;
+      allow delete: if false;
+      allow update: if false;
+  }
+    match /rooms/{document=**} {
+      allow get;
+      allow list: if false;
+      allow create: if false;
+      allow delete: if false;
+      allow update;
+    }
+  }
+}
