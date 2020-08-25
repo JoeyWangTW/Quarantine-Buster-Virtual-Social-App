@@ -15,7 +15,6 @@ function shareRoomLink() {
     roomlink.select();
     document.execCommand('copy');
     document.body.removeChild(roomlink);
-    //alert('Link copied. Please paste to send');
 
     firebase.analytics().logEvent('share_room');
 }
@@ -50,7 +49,6 @@ function closeForm() {
         Http.send();
         Http.addEventListener("readystatechange", function() {
             if (this.readyState === this.DONE) {
-                // console.log(this.responseText);
                 document.getElementById('subnicknameloading').style.display = "none";
                 var responoseJson = this.responseText;
                 responseAndToken = responoseJson.split("/");
@@ -75,7 +73,7 @@ function closeForm() {
 }
 
 function RoomOnLoad() {
-    if (room_ID.length < 1) { //change
+    if (room_ID.length < 1) {
         alert('Invalid room ID');
         window.location.href = fb_app;
     } else {
@@ -85,7 +83,6 @@ function RoomOnLoad() {
         Http.send();
         Http.addEventListener("readystatechange", function() {
             if (this.readyState === this.DONE) {
-                // console.log(this.responseText);
                 var responoseJson = this.responseText
                 if (responoseJson == "Room not created :(") {
                     alert('Invalid room ID');
@@ -109,7 +106,6 @@ async function GetroomName(token) {
     var callerUrl = {
         url: callUrl
     };
-    // console.log(callerUrl);
     var callFrame = await DailyIframe.createFrame({
         showLeaveButton: false,
         iframeStyle: {
@@ -192,15 +188,11 @@ function press_random() {
 
 function flip_topiccard(data) {
     var r_button = document.getElementById("random_button")
-    // r_button.innerHTML = "Spinned"
-    // r_button.style.background = "gray"
     r_button.className = "btn btn-primary disabled";
     r_button.style.pointerEvents = "none";
     document.getElementById("showSpinner").style.display = "block";
     document.getElementById("spinnerText").innerHTML = data.spinner + " made a spin!"    
     setTimeout(function() {
-        // r_button.innerHTML = "Change";
-        // r_button.style.background = "#ffc107"
         r_button.className = "btn btn-primary";
         document.getElementById("showSpinner").style.display = "none";
     }, 2390)
@@ -220,7 +212,6 @@ function flip_topiccard(data) {
     state = 0
     var randomNumber = Math.floor(Math.random() * topic_list.length)
     document.getElementById("result").innerHTML = topic_list[randomNumber] 
-    // console.log(topic_list[randomNumber] + '&nbsp; <span class="badge badge-info badge-pill">?</span>')
     setTimeout(function() {
         document.getElementById("screen").style.opacity = 0;
         for(let i=1; i<=100; i++){
@@ -287,12 +278,6 @@ function showDcard(data) {
     setTimeout(function(){
         document.getElementById("desCardText").style.opacity = 1;
     }, 300)
-    
-    /*for(let i=1; i<=1000; i++){
-        setTimeout(function() {
-            document.getElementById("desCardText").style.opacity = i/1000;
-        }, i*3);
-    } */
 
 }
 
@@ -350,7 +335,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
 
                 });
-                // ShowQuestion(data.topic, data.Trivia_question);
             } else {
                 db.collection('activities').doc(doc.data().topic).get().then(function(doct) {
                     answer_exact = doct.data().QuestionAnswer[doc.data().Trivia_question];
@@ -359,7 +343,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById("triviaAnswer").innerHTML = answer_exact;
                     document.getElementById("TriviaButton").innerHTML = '<button class = "btn btn-secondary" id = "nextquestion" onclick="TriviaNextQuestion(1)"> Next Question </button>';
                 });
-                // showAnswer(data.topic, data.Trivia_question);
             }
         }
         if (doc.data().participants) {
@@ -402,8 +385,6 @@ function TriviaNextQuestion(notFirst) {
         if (this.readyState === this.DONE) {
             var responoseJson = this.responseText;
             console.log(responoseJson);
-            //stop spinning
-            //document.getElementById('triviaLoading').style.display = "none";
         }
     });
 }
@@ -411,7 +392,6 @@ function TriviaNextQuestion(notFirst) {
 
 
 function OpenAnswer() {
-    //document.getElementById('triviaLoading').style.display = "block";
     document.getElementById("showanswer").style.pointerEvents = "none";
     document.getElementById("showanswer").style.opacity = "0.2";
     const Http = new XMLHttpRequest();

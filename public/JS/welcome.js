@@ -36,10 +36,8 @@ function create() {
 
 
 function join() {
-    // var room_ID = document.getElementById("prompt").innerText;
     console.log(roomname);
     console.log(typeof roomname);
-    // room_ID = room_ID.slice(9);
     window.location.href = '/room?id=' + roomname
 }
 
@@ -56,9 +54,7 @@ function copyRoomLink() {
         range.moveToElementText(elm);
         range.select();
         document.execCommand("Copy");
-        // alert("Copied div content to clipboard");
     } else if (window.getSelection) {
-        // other browsers
         var selection = window.getSelection();
         var range = document.createRange();
         range.selectNodeContents(elm);
@@ -74,7 +70,6 @@ function copyRoomLink() {
 }
 
 function submitComment() {
-    // document.querySelector('#subcomment').innerText = 'Sending';
     document.getElementById('subcomment').style.display = "none";
     document.getElementById('subcommentloading').style.display = "block";
     var name = document.getElementById("name").value;
@@ -90,13 +85,6 @@ function submitComment() {
             var responoseJson = this.responseText
             document.getElementById('thankyou').style.display = "block";
              document.getElementById('subcommentloading').style.display = "none";
-            // document.querySelector('#subcomment').innerText = 'Done';
-            // setTimeout(function() {
-            //     document.querySelector('#subcomment').innerText = 'Submit';
-            //                 document.getElementById("name").value = "";
-            // document.getElementById("mail").value = "";
-            // document.getElementById("comment").value = "";
-            // }, 3000);
 
             firebase.analytics().logEvent('create_room')
         }

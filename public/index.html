@@ -8,28 +8,21 @@
     <link rel="icon" type="image/png" sizes="32x32" href="styles/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="styles/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="styles/favicon_io/site.webmanifest">
-
-    <!-- update the version number as needed -->
     <script defer src="/__/firebase/7.14.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/7.14.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/7.14.1/firebase-database.js"></script>
     <script defer src="/__/firebase/7.14.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/7.14.1/firebase-storage.js"></script>
     <script defer src="/__/firebase/7.14.1/firebase-analytics.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
     <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
     <script type="text/javascript" src="/JS/welcome.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/mystyle.css">
      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   </head>
-  <body> <!-- changed -->
+  <body> 
 
-
-
-
-  
+ 
 
     <nav class="navbar " id = "navover">
       
@@ -50,8 +43,6 @@
         <li class="nav-item">
           <a class="nav-link navtext" data-toggle="modal" data-target="#contactModal" onclick="clickFeedback()">Feedback</a>
         </li>
-  
-      <!-- <button type="button" class="btn btn-secondary" id = "leave">Demo Video</button> -->
       </ul>
 
     </nav>
@@ -66,13 +57,10 @@
         <div id = "textDes">
            <h1 id= "header"> An interactive video chat platform</h1> 
            <p class= "detailtext"> QuarantineBuster is a new way for colleagues, friends and families to interact with each other online. QuarantineBuster offers fun activities to make video chat more enjoyable! <!-- No more awkward scilence, no more pressure on starting a new topic, just laid back and have fun! --> <br><br>Simply create a room and share the room link with others. Start now to get your best virtual happy hour experience for FREE!</p> 
-
-          <!--  <p class= "detailtext"></p> -->
            <br><br>
            <div class = "buttons">
              <button type="button" class="btn btn-primary" id="create" data-toggle="modal" data-target="#exampleModal" onclick = "create(); resetButton()">  Create a room to start!</button>
            </div>
-           <!-- <p class= "disclaim">*We don’t collect any personal data.</p> -->
         </div>  
         
         <div id = "demoVideo">
@@ -83,8 +71,6 @@
     </section>
     
     
-
-<!-- Button trigger modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -100,7 +86,6 @@
             </div>
           </div>
           <div class="modal-footer">
-            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Share</button> -->
             <button type="button" class="btn btn-secondary" id = "sharebutton" data-toggle="popover" data-placement="top" data-content="Please paste to send" data-original-title="Link copied" onclick="copyRoomLink()">Invite Friends</button>
 
             <button type="button" class="btn btn-primary" onclick="join()">Enter Room</button>
